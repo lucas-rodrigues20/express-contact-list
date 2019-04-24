@@ -19,6 +19,20 @@ html(lang="en")
               input(type="email" name="email" placeholder="Enter Contact Email").form-control
               div.input-group-append
                 button(type="submit").btn.btn-primary Add New Contact
+          table.mt-3.table.table-striped.table-bordered
+            thead.thead-dark
+              tr
+                th Contact Email
+                th 
+            tbody
+              if !contacts.length
+                tr
+                  td(colspan="2") No Contacts Yet
+              else
+                for contact in contacts
+                  tr
+                    td #{contact.email}
+                    td actions
 
     include ../common/footer.pug
     +footer()
