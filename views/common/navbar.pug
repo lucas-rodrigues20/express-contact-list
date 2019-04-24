@@ -1,0 +1,11 @@
+mixin navbar(user)
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-4
+    a(href="/", aria-label="Contacts App").navbar-brand Contacts App
+    button(type="button" data-toggle="collapse", data-target="#navbarContent").navbar-toggler
+      span.navbar-toggler-icon
+    div(id="navbarContent").collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item
+          a.nav-link(href="/") Home
+        li.nav-item
+          a.nav-link(href="/contacts") Contacts

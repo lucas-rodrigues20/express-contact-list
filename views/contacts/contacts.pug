@@ -1,1 +1,14 @@
-h1 Contacts
+doctype html
+html(lang="en")
+  include ../common/head.pug
+  +head()
+  body
+    header
+      include ../common/navbar.pug
+      +navbar()
+    div.container
+      h1.display-4 Contacts
+      hr
+
+    include ../common/footer.pug
+    +footer()
