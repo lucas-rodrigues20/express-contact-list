@@ -22,8 +22,8 @@ html(lang="en")
           table.mt-3.table.table-striped.table-bordered
             thead.thead-dark
               tr
-                th Contact Email
-                th 
+                th.col-10 Contact Email
+                th.col-2 
             tbody
               if !contacts.length
                 tr
@@ -33,8 +33,11 @@ html(lang="en")
                   tr
                     td #{contact.email}
                     td
-                      form(action="/contacts/" + contact.id + "?_method=DELETE", method="POST")
+                      button(type="button", data-toggle="modal", data-target="#edit-modal", data-id=contact.id, data-email=contact.email).btn.btn-sm.btn-info Edit
+                      form(action="/contacts/" + contact.id + "?_method=DELETE", method="POST").d-inline.ml-2
                         button(type="submit").btn.btn-sm.btn-danger Delete
-
+    include ./edit-modal.pug
+    +edit-modal()
     include ../common/footer.pug
     +footer()
+    script(src="/javascripts/edit-modal.js")

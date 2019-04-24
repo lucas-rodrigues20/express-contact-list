@@ -30,3 +30,16 @@ exports.delete_contact = function(req, res, next) {
       res.redirect('/contacts');
     });
 };
+
+exports.edit_contact = function(req, res, next) {
+
+  return models.Contact
+    .update({
+      email: req.body.edit_email
+    }, {
+      where: { id: req.params.contact_id }
+    })
+    .then(contact => {
+      res.redirect('/contacts');
+    });
+};
