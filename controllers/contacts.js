@@ -19,3 +19,14 @@ exports.submit_contact = function(req, res, next) {
       res.redirect('/contacts');
     });
 };
+
+exports.delete_contact = function(req, res, next) {
+
+  return models.Contact
+    .destroy({
+      where: { id: req.params.contact_id }
+    })
+    .then(contact => {
+      res.redirect('/contacts');
+    });
+};

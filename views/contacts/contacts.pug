@@ -32,7 +32,9 @@ html(lang="en")
                 for contact in contacts
                   tr
                     td #{contact.email}
-                    td actions
+                    td
+                      form(action="/contacts/" + contact.id + "?_method=DELETE", method="POST")
+                        button(type="submit").btn.btn-sm.btn-danger Delete
 
     include ../common/footer.pug
     +footer()
