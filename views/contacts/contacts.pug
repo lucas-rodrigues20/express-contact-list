@@ -9,6 +9,16 @@ html(lang="en")
     div.container
       h1.display-4 Contacts
       hr
+      div.row
+        div.col
+          form(action="/contacts" method="POST")
+            div.input-group
+              div.input-group-prepend
+                span.input-group-text
+                  i.fas.fa-address-book
+              input(type="email" name="email" placeholder="Enter Contact Email").form-control
+              div.input-group-append
+                button(type="submit").btn.btn-primary Add New Contact
 
     include ../common/footer.pug
     +footer()
