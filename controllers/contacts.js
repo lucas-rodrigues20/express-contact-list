@@ -5,7 +5,7 @@ exports.get_contacts = function(req, res, next) {
   return models.Contact
     .findAll()
     .then(contacts => {
-      res.render('contacts/contacts', { contacts });
+      res.render('contacts/contacts', { contacts: contacts, user: req.user });
     });
 };
 

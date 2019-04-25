@@ -9,3 +9,13 @@ mixin navbar(user)
           a.nav-link(href="/") Home
         li.nav-item
           a.nav-link(href="/contacts") Contacts
+      ul.navbar-nav.ml-auto
+        if user
+          span.navbar-text Welcome #{user.email}
+          li.nav-item
+            a.nav-link(href="/logout") Logout
+        else
+          li.nav-item
+            a.nav-link(href="/signup") Sign Up
+          li.nav-item
+            a.nav-link(href="/login") Login
