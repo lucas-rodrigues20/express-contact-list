@@ -4,9 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
+var passport = require('passport');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var contactsRouter = require('./routes/contacts');
+
+require('./passport_setup')(passport);
 
 var app = express();
 
@@ -20,6 +24,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({ secret: 'gimme fuel gimme fire' }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/contacts', contactsRouter);
