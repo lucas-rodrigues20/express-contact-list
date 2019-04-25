@@ -19,7 +19,7 @@ exports.get_login = function(req, res, next) {
 exports.do_login = function(req, res, next) {
   
   passport.authenticate('local', {
-    successRedirect: "/",
+    successRedirect: "/contacts",
     failureRedirect: "/login",
     failureFlash: true
   })(req, res, next);
