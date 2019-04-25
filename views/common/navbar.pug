@@ -8,8 +8,12 @@ mixin navbar(user)
         li.nav-item
           a.nav-link(href="/") Home
         if user
-          li.nav-item
-            a.nav-link(href="/contacts") Contacts
+          if user.is_admin
+            li.nav-item
+              a.nav-link(href="/contacts/admin") Admin Contacts
+          else
+            li.nav-item
+              a.nav-link(href="/contacts") Contacts
       ul.navbar-nav.ml-auto
         if user
           span.navbar-text Welcome #{user.email}

@@ -9,7 +9,7 @@ $(document).ready(function() {
     var modal = $(this);
     var modalForm = modal.find('.modal-body form');
 
-    modalForm.attr('action', `contacts/${id}?_method=PUT`);
+    modalForm.attr('action', `/contacts/${id}?_method=PUT`);
     modal.find('.modal-body input').val(email);
   });
 

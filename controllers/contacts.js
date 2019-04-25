@@ -46,3 +46,12 @@ exports.edit_contact = function(req, res, next) {
       res.redirect('/contacts');
     });
 };
+
+exports.get_all_contacts = function(req, res, next) {
+
+  return models.Contact
+    .findAll()
+    .then(contacts => {
+      res.render('contacts/contacts', { contacts: contacts, user: req.user });
+    });
+};
