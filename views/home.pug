@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  include ./common/head.pug
+  +head()
+  body
+    header
+      include ./common/navbar.pug
+      +navbar(user)
+    div.jumbotron.jumbotron-fluid
+      div.container
+        h1.display-4 Contacts App
+        hr
+        p.lead This is a simple Express.js application to practice my development skills.
+        p This application was built inspired by #[a(href="https://www.youtube.com/watch?v=G8uL0lFFoN0" target="_blank") this tutorial].
+    include ./common/footer.pug
+    +footer()
